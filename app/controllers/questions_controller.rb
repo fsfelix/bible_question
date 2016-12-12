@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
     before_action :find_question, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!, except: [:index, :show]
     
     def index
         @questions = Question.all.order("created_at DESC")
@@ -10,12 +11,11 @@ class QuestionsController < ApplicationController
     end
 
     def new
-        @question = Question.new
+        @question = current_user.questions.build
     end
     
     def create
-        @question = Question.new(question_params)
-        
+        @question = current_user.questions.build(question_params)
         if @question.save
             redirect_to @question
         else
