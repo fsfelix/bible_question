@@ -1,6 +1,15 @@
 %h1= @question.title
 %p= @question.description
 %p= @question.user.name
+%p
+  = @question.get_upvotes.size
+  Likes
+%p 
+  = @question.get_downvotes.size
+  Dislikes
+
+= link_to "Like", like_question_path(@question), method: :get
+= link_to "Dislike",  dislike_question_path(@question), method: :get
 
 #answer
   %h2.answer_count= pluralize(@question.answers.count, "Answer")

@@ -3,4 +3,7 @@
     %p
         = question.answers.count
         Comments
+    %p
+        = question.get_likes.size
+        Likes
 = link_to "New question", new_question_path
