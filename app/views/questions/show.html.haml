@@ -2,6 +2,14 @@
 %p= @question.description
 %p= @question.user.name
 
+#answer
+  %h2.answer_count= pluralize(@question.answers.count, "Answer")
+  - @answers.each do |answer|
+    .answer
+      %p.username= answer.user.name
+      %p.content= answer.content
+      
+  = render 'answers/form'
 = link_to "Edit", edit_question_path(@question)
 = link_to "Destroy", question_path(@question), method: :delete, data: { confirm: "Are you sure?"}
 = link_to "Home", root_path

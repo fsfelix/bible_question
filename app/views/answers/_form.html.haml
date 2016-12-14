@@ -1,0 +1,3 @@
+= simple_form_for([@question, @question.answers.build]) do |f|
+    = f.input :content, label: "Answer the question"
+    = f.button :submit, class: "button"
