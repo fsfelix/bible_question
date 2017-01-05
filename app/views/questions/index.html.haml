@@ -1,6 +1,16 @@
-- @questions.each do |question|
-    %h2= link_to question.title, question
-    %p
+.wrapper
+  %h1 Perguntas
+  - @questions.each do |question|
+    .question
+      .question_title
+        = link_to question.title, question
+        .question_author
+          por
+          = @users.find(question.user_id).name
+
+      .description
+        = link_to question.description.truncate_words(20), question
+        %br
+      .number
         = question.answers.count
-        Comments
-= link_to "New question", new_question_path
+        Respostas
