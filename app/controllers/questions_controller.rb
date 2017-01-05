@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-    before_action :find_question, only: [:show, :edit, :update, :destroy]
+    before_action :find_question, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
     before_action :authenticate_user!, except: [:index, :show]
     
     def index
@@ -38,8 +38,18 @@ class QuestionsController < ApplicationController
     def destroy
         @question.destroy
         redirect_to root_path
-    
     end
+    
+    def upvote
+        @question.upvote_by current_user
+        redirect_to :back
+    end
+    
+    def downvote
+        @question.downvote_by current_user
+        redirect_to :back
+    end
+    
     
     private
     
