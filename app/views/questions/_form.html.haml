@@ -1,6 +1,6 @@
 = simple_form_for @question do |f|
-    = f.input :title
+    = f.input :title, required: true
     %br
-    = f.input :description
+    = f.input :description, required: true
 
     = f.button :submit, class: 'button'

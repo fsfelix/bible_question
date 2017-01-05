@@ -1,3 +1,34 @@
 // Place all the styles related to the Questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.question {
+    border-bottom: 1px solid $light_gray;
+    padding: 0.5rem 0;
+    .question_title {
+        a {
+            font-size: 1.5rem;
+            color: $wine;
+            text-decoration: none;
+            &:hover {
+                color: $dark_gray;
+            }
+        }
+    }
+    .question_author {
+        font-size: 0.8rem;
+        display: inline-block;
+    }
+    .description {
+        font-size: 0.95rem;
+        color: $dark_gray;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        a {
+	          color: $dark_gray;
+	          text-decoration: none;
+        }
+    }
+    .number {
+        font-size: 0.8rem;
+    }
+}

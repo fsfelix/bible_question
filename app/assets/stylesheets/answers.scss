@@ -6,40 +6,34 @@ $light_gray: #C0C1C1;
 $green: #33CD99;
 $wine: #990000;
 
-.question {
-    border-bottom: 1px solid $light_gray;
-    padding: 0.5rem 0;
-    .question_title {
-        a {
-            font-size: 1.5rem;
-            color: $wine;
-            text-decoration: none;
-            &:hover {
-                color: $dark_gray;
-            }
-        }
+.question_ans {
+    overflow: hidden;
+    .title {
+        font-size: 1.5rem;
+        font-weight: 3px;
+        color: black;
     }
-    .question_author {
-        font-size: 0.8rem;
-        display: inline-block;
+    .author {
+        padding-top: 0.5rem;
+        font-size: 0.85rem;
+        .span {
+            color: $wine;
+        }
     }
     .description {
-        font-size: 0.95rem;
+        font-size: 1rem;
         color: $dark_gray;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        a {
-	          color: $dark_gray;
-	          text-decoration: none;
-        }
     }
-    .number {
-        font-size: 0.8rem;
+    .likes {
+        float: right;
+        padding-bottom: 1rem;
     }
+    border-bottom: 1px solid $light_gray;
 }
 
 .answer {
     border-bottom: 1px solid $light_gray;
+    padding-top: 0.5rem;
     .username {
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
