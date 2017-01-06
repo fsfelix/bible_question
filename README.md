@@ -6,5 +6,7 @@
 # How to Run this app.
 
 > bundle install
+
 > rake db:migrate
+
 > rails s
