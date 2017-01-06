@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
     before_action :find_question, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
     before_action :authenticate_user!, except: [:index, :show]
-    
+
     def index
       @questions = Question.all.order("created_at DESC")
       @users     = User.all
@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
     def new
         @question = current_user.questions.build
     end
-    
+
     def create
         @question = current_user.questions.build(question_params)
         if @question.save
@@ -23,10 +23,10 @@ class QuestionsController < ApplicationController
             render 'new'
         end
     end
-    
+
     def edit
     end
-    
+
     def update
         if @question.update(question_params)
             redirect_to @question
@@ -34,31 +34,31 @@ class QuestionsController < ApplicationController
             render 'edit'
         end
     end
-    
+
     def destroy
         @question.destroy
         redirect_to root_path
     end
-    
+
     def upvote
         @question.upvote_by current_user
         redirect_to :back
     end
-    
+
     def downvote
         @question.downvote_by current_user
         redirect_to :back
     end
-    
-    
+
+
     private
-    
+
     def find_question
         @question = Question.find(params[:id])
     end
-    
+
     def question_params
         params.require(:question).permit(:title, :description)
     end
-    
+
 end

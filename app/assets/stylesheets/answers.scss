@@ -18,6 +18,7 @@ a {
     }
 
 }
+
 .question_ans {
     overflow: hidden;
     .title {
@@ -64,5 +65,24 @@ a {
     .content {
         font-size: 1rem;
         color: $dark_gray;
+    }
+
+    .footer_answ {
+        padding-top: 0.25rem;
+        padding-bottom: 0.5rem;
+        .author {
+            font-size: 0.85rem;
+            display: inline-block;
+            p {
+                padding: 0;
+                margin: 0;
+            }
+            span {
+                color: $wine;
+            }
+        }
+        .likes {
+            float: right;
+        }
     }
 }
