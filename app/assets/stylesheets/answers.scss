@@ -3,9 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $dark_gray: #2B2E2E;
 $light_gray: #C0C1C1;
-$green: #33CD99;
 $wine: #990000;
+$dark_green: #187f00;
+$dark_red: #800000;
 
+a {
+    text-decoration: none;
+    .up {
+        color: $dark_green;
+    }
+
+    .down {
+        color: $dark_red;
+    }
+
+}
 .question_ans {
     overflow: hidden;
     .title {
@@ -13,20 +25,28 @@ $wine: #990000;
         font-weight: 3px;
         color: black;
     }
-    .author {
-        padding-top: 0.5rem;
-        font-size: 0.85rem;
-        .span {
-            color: $wine;
-        }
-    }
     .description {
+        padding-top: 0.5rem;
         font-size: 1rem;
         color: $dark_gray;
     }
-    .likes {
-        float: right;
-        padding-bottom: 1rem;
+    .footer_ans {
+        padding-top: 0.25rem;
+        padding-bottom: 0.5rem;
+        .author {
+        font-size: 0.85rem;
+        display: inline-block;
+            p {
+                padding: 0;
+                margin: 0;
+            }
+            span {
+                color: $wine;
+            }
+        }
+        .likes {
+            float: right;
+        }
     }
     border-bottom: 1px solid $light_gray;
 }

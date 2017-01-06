@@ -5,17 +5,18 @@
       = @question.title
     .description
       = @question.description
-    .author
-      por
-      .span= @question.user.name
-    .likes
-      = @question.get_upvotes.size
-      %i.fa.fa-thumbs-o-up
-      = @question.get_downvotes.size
-      %i.fa.fa-thumbs-o-down
-
-      = link_to "Like", like_question_path(@question), method: :get
-      = link_to "Dislike",  dislike_question_path(@question), method: :get
+    .footer_ans
+      .author
+        %p
+          por
+          %span #{@question.user.name}
+      .likes
+        = @question.get_upvotes.size
+        = link_to like_question_path(@question), method: :get do
+          %i.up.fa.fa-thumbs-o-up
+        = @question.get_downvotes.size
+        = link_to dislike_question_path(@question), method: :get do
+          %i.down.fa.fa-thumbs-o-down
 
   %h2.answer_count= pluralize(@question.answers.count, "Answer")
   - @answers.each do |answer|
