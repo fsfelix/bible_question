@@ -7,10 +7,13 @@
         .question_author
           por
           = @users.find(question.user_id).name
-
       .description
         = link_to question.description.truncate_words(20), question
         %br
+      .footer_q
+        - question.tag_list.each do |tag|
+          .tag_btn
+            #{tag.capitalize}
       .number
         = question.answers.count
         Respostas

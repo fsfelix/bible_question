@@ -4,6 +4,7 @@
 .question {
     border-bottom: 1px solid $light_gray;
     padding: 0.5rem 0;
+    overflow: hidden;
     .question_title {
         a {
             font-size: 1.5rem;
@@ -28,7 +29,36 @@
 	          text-decoration: none;
         }
     }
+
+    .footer_q {
+        padding-bottom: 0.25rem;
+        padding-top: 0.25rem;
+        display: inline-block;
+        .tag_btn {
+	          background-color:#e6e6e6;
+	          -moz-border-radius:5px;
+	          -webkit-border-radius:5px;
+	          border-radius:5px;
+	          display:inline-block;
+	          //cursor:pointer;
+	          color:#ab0000;
+	          font-family:Arial;
+	          font-size: 0.8rem;
+	          padding:5px 16px;
+//	          text-decoration:none;
+        }
+        .tag_btn:hover {
+	          background-color:#d4d4d4;
+        }
+        // .tag_btn:active {
+	      //     position:relative;
+	      //     top:1px;
+        // }
+    }
+
     .number {
         font-size: 0.8rem;
+        float: right;
     }
+
 }

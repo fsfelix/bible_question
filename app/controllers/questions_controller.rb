@@ -3,8 +3,8 @@ class QuestionsController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
 
     def index
-      @questions = Question.all.order("created_at DESC")
-      @users     = User.all
+        @questions = Question.all.order("created_at DESC")
+        @users     = User.all
     end
 
     def show
@@ -58,7 +58,7 @@ class QuestionsController < ApplicationController
     end
 
     def question_params
-        params.require(:question).permit(:title, :description)
+        params.require(:question).permit(:title, :description, :tag_list)
     end
 
 end
