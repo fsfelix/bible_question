@@ -1,6 +1,7 @@
 // Place all the styles related to the Questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .title {
     font-family: "Brandon Grotesque","Helvetica Neue", Helvetica, sans-serif;
     font-size: 1rem;
@@ -45,7 +46,7 @@
 		.footer_q {
 				padding-bottom: 0.25rem;
 				padding-top: 0.25rem;
-				display: inline-block;
+//				display: inline-block;
 				.tag_btn {
 						background-color:#e6e6e6;
 						-moz-border-radius:5px;
@@ -66,11 +67,15 @@
 				//		 position:relative;
 				//		 top:1px;
 				// }
+        .number {
+				    font-size: 0.8rem;
+            //            margin: 1px;
+            vertical-align: middle;
+				    float: right;
+            padding-top: 5px;
+		    }
+
 		}
 
-		.number {
-				font-size: 0.8rem;
-				float: right;
-		}
 
 }
