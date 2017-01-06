@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $dark_gray: #2B2E2E;
-$light_gray: #C0C1C1;
+$light_gray: #7a7a7a;
 $wine: #990000;
 $dark_green: #187f00;
 $dark_red: #800000;
@@ -49,8 +49,19 @@ a {
             float: right;
         }
     }
-    border-bottom: 1px solid $light_gray;
 }
+
+.answer_count {
+    font-family: "Brandon Grotesque","Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid $light_gray;
+    color: $dark_gray;
+    text-align: left;
+}
+
 
 .answer {
     border-bottom: 1px solid $light_gray;

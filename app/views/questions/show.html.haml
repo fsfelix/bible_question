@@ -3,7 +3,7 @@
     .title
       = @question.title
     .description
-      = @question.description
+      = simple_format(@question.description)
     .footer_ans
       .author
         %p
@@ -17,10 +17,10 @@
         = link_to dislike_question_path(@question), method: :get do
           %i.down.fa.fa-thumbs-o-down
 
-  %h2.answer_count= pluralize(@question.answers.count, "Answer")
+  %h2.answer_count= pluralize(@question.answers.count, "Respostas")
   - @answers.each do |answer|
     .answer
-      .content= answer.content
+      .content= simple_format(answer.content)
       .footer_answ
         .author
           %p

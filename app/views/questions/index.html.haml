@@ -1,11 +1,11 @@
 .wrapper
-  %h1 Perguntas
+  %h1.title Perguntas
   - @questions.each do |question|
     .question
       .question_title
         = link_to question.title, question
-        .question_author
-          por #{@users.find(question.user_id).name}, #{time_ago_in_words(question.created_at)} atrás.
+      .question_author
+        por #{@users.find(question.user_id).name}, #{time_ago_in_words(question.created_at)} atrás.
       .description
         = link_to question.description.truncate_words(20), question
         %br
