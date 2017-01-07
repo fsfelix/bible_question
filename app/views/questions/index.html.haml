@@ -1,4 +1,10 @@
 .wrapper
+  - if !user_signed_in?
+    .welcome_alert
+      %span.closebtn{:onclick => "this.parentElement.style.display='none';"}
+        &times
+      Bem-vindo ao BIBLIOUS.
+
   %h1.title Perguntas
   - @questions.each do |question|
     .question
