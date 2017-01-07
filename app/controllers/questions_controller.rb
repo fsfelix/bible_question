@@ -50,6 +50,14 @@ class QuestionsController < ApplicationController
         redirect_to :back
     end
 
+    def tagged
+      @users = User.all
+      if params[:tag].present?
+        @questions = Question.tagged_with(params[:tag]).order("created_at DESC")
+      else
+        @questions = Question.all.order("created_at DESC")
+      end
+    end
 
     private
 
