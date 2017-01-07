@@ -219,3 +219,12 @@ pt:
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
     pm: ''
+  devise:
+    sessions:
+      user:
+        signed_out: "Deslogou com sucesso."
+        signed_in:  "Bem-vindo!"
+    failure:
+      user:
+        not_found_in_database: "Email não cadastrado!"
+        invalid: "Email/Senha inválido!"
