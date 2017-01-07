@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
     before_action :find_question, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
-    before_action :authenticate_user!, except: [:index, :show]
+    before_action :authenticate_user!, except: [:index, :show, :tagged]
 
     def index
         @questions = Question.all.order("created_at DESC")
