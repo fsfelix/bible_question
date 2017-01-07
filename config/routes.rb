@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'tags', to: "tags#index"
+
   devise_for :users
   resources :questions do
     member do

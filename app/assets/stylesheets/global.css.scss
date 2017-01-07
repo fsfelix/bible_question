@@ -138,3 +138,26 @@ textarea {
 // textarea {
 // 	min-height: 200px;
 // }
+
+
+.tag_btn {
+		background-color:#e6e6e6;
+		-moz-border-radius:5px;
+		-webkit-border-radius:5px;
+		border-radius:5px;
+		display:inline-block;
+		//cursor:pointer;
+		color:#ab0000;
+		font-family:Arial;
+		font-size: 0.8rem;
+		padding:5px 16px;
+    margin-top: 4px;
+    //						text-decoration:none;
+}
+.tag_btn:hover {
+		background-color:#d4d4d4;
+}
+// .tag_btn:active {
+//		 position:relative;
+//		 top:1px;
+// }

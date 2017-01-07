@@ -1,0 +1,5 @@
+.wrapper
+  %h1.title Tags
+  .tags
+    - @tags.each do |tag, count|
+      .tag_btn #{tag.to_s.capitalize} #{count}
