@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
     before_action :find_question, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
     before_action :authenticate_user!, except: [:index, :show, :tagged]
+    before_action :search_init
 
     def index
         parse_params()
@@ -12,10 +13,14 @@ class QuestionsController < ApplicationController
 
     def show
       # @answers = Answer.where(question_id: @question)
+      parse_params()
+      @search = Question.search(params[:q])
+
       @answers = Answer.where(question_id: @question).order(:cached_weighted_score).reverse
     end
 
     def new
+        @questions = @search.result.order("created_at DESC").uniq
         @question = current_user.questions.build
     end
 
@@ -73,6 +78,9 @@ class QuestionsController < ApplicationController
         params.require(:question).permit(:title, :description, :tag_list)
     end
 
+    def search_init
+      @search = Question.search(params[:q])
+    end
     def parse_params
         if params[:q] != nil
             params[:q][:combinator] = 'or'

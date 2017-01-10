@@ -1,4 +1,6 @@
 class TagsController < ApplicationController
+  before_action :search_init
+
   def index
     @tags = tag_list()
   end
@@ -13,5 +15,12 @@ class TagsController < ApplicationController
 
     return @list.sort {|a1 ,a2| a2[1]<=>a1[1]}
   end
+
+  private
+  
+  def search_init
+    @search = Question.search(params[:q])
+  end
+
 end
 
