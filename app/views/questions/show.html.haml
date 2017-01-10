@@ -3,7 +3,7 @@
     .title
       = @question.title
     .description
-      = simple_format(@question.description)
+      = @question.description.html_safe
     .footer_ans
       .author
         %p

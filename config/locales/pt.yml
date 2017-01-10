@@ -228,3 +228,4 @@ pt:
       user:
         not_found_in_database: "Email não cadastrado!"
         invalid: "Email/Senha inválido!"
+        unauthenticated: "Você precisa estar logado!"
