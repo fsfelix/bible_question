@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
 
     def index
         @search = Question.search(params[:q])
-        @questions = @search.result
+        @questions = @search.result.order("created_at DESC")
         #@questions = Question.all.order("created_at DESC")
         @users     = User.all
     end
