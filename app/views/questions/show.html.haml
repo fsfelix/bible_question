@@ -27,6 +27,14 @@
           %p
             por
             %span #{answer.user.name}
+        .likes
+          = answer.get_upvotes.size
+          = link_to like_question_answer_path(@question, answer), method: :get do
+            %i.up.fa.fa-thumbs-o-up
+          = answer.get_downvotes.size
+          = link_to dislike_question_answer_path(@question, answer), method: :get do
+            %i.down.fa.fa-thumbs-o-down
+
   %br
   = render 'answers/form'
 
