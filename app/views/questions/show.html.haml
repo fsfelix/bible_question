@@ -20,7 +20,8 @@
   %h2.answer_count= pluralize(@question.answers.count, "Respostas")
   - @answers.each do |answer|
     .answer
-      .content= simple_format(answer.content)
+      -# .content= simple_format(answer.content, :sanitize => false)
+      .content= answer.content.html_safe
       .footer_answ
         .author
           %p
