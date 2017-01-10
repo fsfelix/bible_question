@@ -16,6 +16,8 @@ gem 'paperclip', '~> 5.1'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'ckeditor'
+gem 'ransack', '~> 1.8', '>= 1.8.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

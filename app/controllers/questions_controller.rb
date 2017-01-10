@@ -3,7 +3,9 @@ class QuestionsController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show, :tagged]
 
     def index
-        @questions = Question.all.order("created_at DESC")
+        @search = Question.search(params[:q])
+        @questions = @search.result
+        #@questions = Question.all.order("created_at DESC")
         @users     = User.all
     end
 
