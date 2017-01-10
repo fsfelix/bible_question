@@ -2,9 +2,12 @@
   .question_ans
     .title
       = @question.title
-      - if @question.user_id == current_user.id
-        = link_to "Edit", edit_question_path(@question)
-        = link_to "Destroy", question_path(@question), method: :delete, data: { confirm: "Are you sure?" }
+      .tools
+        - if @question.user_id == current_user.id
+          = link_to edit_question_path(@question) do
+            %i.edit.fa.fa-pencil-square-o
+          = link_to question_path(@question), method: :delete, data: { confirm: "Are you sure?" } do
+            %i.trash.fa.fa-trash
 
     .description
       = @question.description.html_safe
@@ -41,4 +44,3 @@
   %br
   = render 'answers/form'
 
-= link_to "Home", root_path
