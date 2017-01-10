@@ -3,8 +3,9 @@ class QuestionsController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show, :tagged]
 
     def index
+        parse_params()
         @search = Question.search(params[:q])
-        @questions = @search.result.order("created_at DESC")
+        @questions = @search.result.order("created_at DESC").uniq
         #@questions = Question.all.order("created_at DESC")
         @users     = User.all
     end
@@ -70,6 +71,17 @@ class QuestionsController < ApplicationController
 
     def question_params
         params.require(:question).permit(:title, :description, :tag_list)
+    end
+
+    def parse_params
+        if params[:q] != nil
+            params[:q][:combinator] = 'or'
+            params[:q][:groupings] = []
+            custom_words = params[:q].delete('description_or_title_or_tags_name_cont_any')
+            custom_words.split(' ').each_with_index do |word, index|
+                params[:q][:groupings][index] = {description_or_title_or_tags_name_cont_any: word}
+            end
+        end
     end
 
 end
