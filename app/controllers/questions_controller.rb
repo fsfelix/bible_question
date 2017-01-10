@@ -8,7 +8,8 @@ class QuestionsController < ApplicationController
     end
 
     def show
-        @answers = Answer.where(question_id: @question)
+      # @answers = Answer.where(question_id: @question)
+        @answers = Answer.order(:cached_votes_up).reverse
     end
 
     def new
