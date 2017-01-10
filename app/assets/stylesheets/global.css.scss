@@ -76,17 +76,27 @@ header {
 	.header_inner {
 		width: 90%;
 		margin: 0 auto;
+    text-align: center;
 		#logo {
 			  display: inline-block;
-   			float: left;
+   			//float: left;
         width: 200px;
         img {
             max-height: 100%;
             max-width: 100%;
         }
 		}
+    .search {
+        display: inline-block;
+        margin-left: 1rem;
+        .field {
+            i {
+                margin-left: -25px;
+            }
+        }
+    }
 		nav {
-			float: right;
+        display: inline-block;
 			a {
 				text-decoration: none;
 				color: $dark_gray;

@@ -1,10 +1,4 @@
 .wrapper
-  = search_form_for @search do |f|
-    .field
-      = f.label :description_or_title_or_tags_name_cont_any, "Name contains"
-      = f.search_field :description_or_title_or_tags_name_cont_any
-    .actions
-      = f.submit "Search"
   - if !user_signed_in?
     .welcome_alert
       %span.closebtn{:onclick => "this.parentElement.style.display='none';"}
