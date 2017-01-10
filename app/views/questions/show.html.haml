@@ -3,7 +3,7 @@
     .title
       = @question.title
       .tools
-        - if @question.user_id == current_user.id
+        - if user_signed_in? && @question.user_id == current_user.id
           = link_to edit_question_path(@question) do
             %i.edit.fa.fa-pencil-square-o
           = link_to question_path(@question), method: :delete, data: { confirm: "Are you sure?" } do
