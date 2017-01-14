@@ -17,7 +17,7 @@ class TagsController < ApplicationController
   end
 
   private
-  
+
   def search_init
     @search = Question.search(params[:q])
   end

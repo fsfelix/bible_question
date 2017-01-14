@@ -1,0 +1,69 @@
+$gray_input: #D8DEE2;
+
+
+.btn {
+    background: #eb4c4c;
+    background-image: -webkit-linear-gradient(top, #eb4c4c, #8f2525);
+    background-image: -moz-linear-gradient(top, #eb4c4c, #8f2525);
+    background-image: -ms-linear-gradient(top, #eb4c4c, #8f2525);
+    background-image: -o-linear-gradient(top, #eb4c4c, #8f2525);
+    background-image: linear-gradient(to bottom, #eb4c4c, #8f2525);
+    -webkit-border-radius: 8;
+    -moz-border-radius: 8;
+    border-radius: 8px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 17px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #f25959;
+    background-image: -webkit-linear-gradient(top, #f25959, #9e2f2f);
+    background-image: -moz-linear-gradient(top, #f25959, #9e2f2f);
+    background-image: -ms-linear-gradient(top, #f25959, #9e2f2f);
+    background-image: -o-linear-gradient(top, #f25959, #9e2f2f);
+    background-image: linear-gradient(to bottom, #f25959, #9e2f2f);
+    text-decoration: none;
+}
+
+.log_in_wrapper {
+    width: 100%;
+    text-align: center;
+    input {
+        width: 100%;
+        border: 1px solid $gray_input;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .log_in_container {
+
+        #new_user {
+            text-align: center;
+            padding: 10px;
+            margin: 0 auto;
+            width: 200px;
+            border: 1px solid $gray_input;
+            border-radius: 5px;
+            p {
+                float: left;
+                margin: 0px;
+                padding: 5px 0;
+                font-size: 0.9rem;
+            }
+
+            .simple_form {
+                font-size: 0.9rem;
+                .new_user {
+
+                }
+            }
+        }
+
+
+        width: 50%;
+        margin: 0 auto;
+    }
+}

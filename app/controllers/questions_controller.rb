@@ -81,6 +81,7 @@ class QuestionsController < ApplicationController
     def search_init
       @search = Question.search(params[:q])
     end
+
     def parse_params
         if params[:q] != nil
             params[:q][:combinator] = 'or'
